@@ -11,9 +11,30 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        var joe: Person? = Person()
+        var job: Job? = Job()
+        
+        joe?.job = job
+        job?.person = joe
+        
+        joe = nil
+        job = nil
+        
     }
-
-
 }
 
+class Job {
+    var person: Person?
+    
+    deinit {
+        print("Job deallocated")
+    }
+}
+
+class Person {
+    var job: Job?
+    deinit {
+        print("Person deallocated")
+    }
+}
