@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     func doAnimation(showLabel: Bool) {
         let text = "Some text"
         
-        
+        // Чтобы избежать сильных ссылок на объекты из вне создаётся список переменных и присвается им свойства weak или unowned
         UIView.animate(withDuration: 0.3) {[weak self] in
             if showLabel {
                 self?.myLabel.alpha = 1
