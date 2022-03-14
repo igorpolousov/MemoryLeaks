@@ -23,15 +23,15 @@ class ViewController: UIViewController {
         
     }
 }
-
+// Child class
 class Job {
-    var person: Person?
+    weak var person: Person?
     
     deinit {
         print("Job deallocated")
     }
 }
-
+// Parent class
 class Person {
     var job: Job?
     deinit {
