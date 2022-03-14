@@ -13,13 +13,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         var joe: Person? = Person()
-        var job: Job? = Job()
+        var dev: Job? = Job()
         
-        joe?.job = job
-        job?.person = joe
+        joe?.job = dev
+        dev?.person = joe
         
         joe = nil
-        job = nil
+        dev = nil
         
     }
 }
