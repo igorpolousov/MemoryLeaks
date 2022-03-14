@@ -8,33 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        var joe: Person? = Person()
-        var dev: Job? = Job()
-        
-        joe?.job = dev
-        dev?.person = joe
-        
-        joe = nil
-        dev = nil
-        
-    }
-}
-
-class Job {
-    var person: Person?
     
-    deinit {
-        print("Job deallocated")
+    var myLabel: UILabel!
+    
+    func doAnimation(showLabel: Bool) {
+        let text = "Some text"
+        
+        
+        UIView.animate(withDuration: 0.3) {[weak self] in
+            if showLabel {
+                self?.myLabel.alpha = 1
+            } else {
+                self?.myLabel.alpha = 0
+            }
+            self?.myLabel.text = text
+        }
     }
 }
 
-class Person {
-    var job: Job?
-    deinit {
-        print("Person deallocated")
-    }
-}
